@@ -1,0 +1,43 @@
+{
+  "name": "celestial-feather",
+  "productName": "celestial-feather",
+  "version": "0.0.0",
+  "description": "A web-based dialog editor for Celeste.",
+  "main": "src/electron/index.js",
+  "type": "module",
+  "scripts": {
+    "app:dev": "cross-env IN_DEV=1 electron-forge start",
+    "app:start": "electron-forge start",
+    "app:bin": "electron-forge package",
+    "app:build": "electron-forge make --platform win32 && electron-forge make --platform linux",
+    "app:build-all": "electron-forge make --platform win32 && electron-forge make --platform linux && electron-forge make --platform darwin",
+    "app:build-cur": "electron-forge make",
+    "publish": "electron-forge publish",
+    "web:dev": "cross-env IN_DEV=1 node src/server/standalone.js",
+    "web:build": "next build"
+  },
+  "keywords": [],
+  "author": "Celeste Community",
+  "license": "MIT",
+  "devDependencies": {
+    "@electron-forge/cli": "^7.4.0",
+    "@electron-forge/maker-deb": "^7.4.0",
+    "@electron-forge/maker-rpm": "^7.4.0",
+    "@electron-forge/maker-squirrel": "^7.4.0",
+    "@electron-forge/maker-zip": "^7.4.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
+    "@electron-forge/plugin-fuses": "^7.4.0",
+    "@electron/fuses": "^1.8.0",
+    "cross-env": "^7.0.3",
+    "electron": "31.0.2",
+    "next": "^14.2.4"
+  },
+  "dependencies": {
+    "dompurify": "^3.1.5",
+    "electron-squirrel-startup": "^1.0.1",
+    "express": "^4.19.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "squire-rte": "^2.2.8"
+  }
+}
